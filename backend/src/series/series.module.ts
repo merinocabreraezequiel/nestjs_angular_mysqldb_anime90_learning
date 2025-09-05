@@ -7,7 +7,7 @@ import { Personaje } from '../personajes/personaje.model';
 
 @Module({
   imports: [SequelizeModule.forFeature([Serie, Personaje])],
-  controllers: [SeriesController],
   providers: [SeriesService],
+  controllers: [SeriesController],
 })
 export class SeriesModule {}

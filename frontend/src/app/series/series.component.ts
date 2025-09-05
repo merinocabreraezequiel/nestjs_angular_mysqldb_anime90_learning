@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeService } from '../anime.service';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-series',
-  templateUrl: './series.component.html'
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './series.component.html',
 })
 export class SeriesComponent implements OnInit {
   series: any[] = [];
 
-  constructor(private animeService: AnimeService) {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.animeService.getSeries().subscribe(data => this.series = data);
+  ngOnInit() {
+    this.http.get<any[]>('http://localhost:3000/series')
+      .subscribe(data => {
+        this.series = data;
+        console.log('Series:', this.series);
+      });
   }
 }

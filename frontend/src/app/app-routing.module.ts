@@ -4,9 +4,9 @@ import { SeriesComponent } from './series/series.component';
 import { PersonajesComponent } from './personajes/personajes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'series', pathMatch: 'full' },
+  { path: '', redirectTo: 'series', pathMatch: 'full' }, // redirección por defecto
   { path: 'series', component: SeriesComponent },
-  { path: 'personajes', component: PersonajesComponent },
+  { path: 'personajes', component: PersonajesComponent }
 ];
 
 @NgModule({
