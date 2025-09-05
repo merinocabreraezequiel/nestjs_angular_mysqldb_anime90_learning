@@ -13,15 +13,26 @@ export class SeriesComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    console.log('Cargando series...');
-    this.http.get<any[]>('http://localhost:3000/series')
-      .subscribe({
-        next: data => {
+ngOnInit() {
+  console.log('Cargando series...');
+  this.http.get<any>('http://localhost:3000/series')
+    .subscribe({
+      next: data => {
+        console.log('✅ Respuesta cruda del backend:', data);
+
+        // Si el backend responde { data: [...] }
+        if (Array.isArray(data)) {
           this.series = data;
-          console.log('✅ Series recibidas:', this.series);
-        },
-        error: err => console.error('❌ Error al cargar series:', err)
-      });
-  }
+        } else if (data && data.data && Array.isArray(data.data)) {
+          this.series = data.data;
+        } else {
+          console.warn('⚠️ No se detectó array en la respuesta');
+        }
+
+        console.log('📋 Series asignadas al componente:', this.series);
+      },
+      error: err => console.error('❌ Error al cargar series:', err)
+    });
+}
+
 }
