@@ -17,6 +17,26 @@
 CREATE DATABASE IF NOT EXISTS `anime90s` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 USE `anime90s`;
 
+-- Volcando estructura para tabla anime90s.mangaca
+CREATE TABLE IF NOT EXISTS `mangaca` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_series` int(11) DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `id_series` (`id_series`),
+  CONSTRAINT `FK__series` FOREIGN KEY (`id_series`) REFERENCES `series` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla anime90s.mangaca: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `mangaca` DISABLE KEYS */;
+INSERT INTO `mangaca` (`id`, `nombre`, `id_series`, `createdAt`, `updatedAt`) VALUES
+	(1, 'Akira Toriyama', 1, '2025-09-05 13:52:03', '2025-09-05 13:52:35'),
+	(2, 'Naoko Takeuchi', 2, '2025-09-05 13:53:16', '2025-09-05 13:53:16'),
+	(3, 'Yoshiyuki Sadamoto', 3, '2025-09-05 13:53:44', '2025-09-05 13:53:44');
+/*!40000 ALTER TABLE `mangaca` ENABLE KEYS */;
+
 -- Volcando estructura para tabla anime90s.personajes
 CREATE TABLE IF NOT EXISTS `personajes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -30,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `personajes` (
   CONSTRAINT `personajes_ibfk_1` FOREIGN KEY (`serieId`) REFERENCES `series` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla anime90s.personajes: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla anime90s.personajes: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `personajes` DISABLE KEYS */;
 INSERT INTO `personajes` (`id`, `nombre`, `rol`, `serieId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Goku', 'Protagonista', 1, '2025-09-05 11:18:51', '2025-09-05 11:18:51'),
@@ -52,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `series` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla anime90s.series: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla anime90s.series: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `series` DISABLE KEYS */;
 INSERT INTO `series` (`id`, `nombre`, `anio`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Dragon Ball Z', 1989, '2025-09-05 11:18:51', '2025-09-05 11:18:51'),
