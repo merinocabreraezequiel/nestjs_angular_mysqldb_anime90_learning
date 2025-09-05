@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Personaje } from './personaje.model';
+import { Serie } from '../series/serie.model';
 
 @Injectable()
 export class PersonajesService {
@@ -10,6 +11,6 @@ export class PersonajesService {
   ) {}
 
   async findAll() {
-    return this.personajeModel.findAll();
+    return this.personajeModel.findAll({ include: [Serie] });
   }
 }

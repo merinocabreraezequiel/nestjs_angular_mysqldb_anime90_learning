@@ -24,4 +24,4 @@ lerna-debug.log*
 .tmp
 
 #backend
-backend/dist
+/backend/dist

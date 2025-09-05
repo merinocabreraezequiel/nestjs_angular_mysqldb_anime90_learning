@@ -16,13 +16,14 @@ exports.PersonajesService = void 0;
 const common_1 = require("@nestjs/common");
 const sequelize_1 = require("@nestjs/sequelize");
 const personaje_model_1 = require("./personaje.model");
+const serie_model_1 = require("../series/serie.model");
 let PersonajesService = class PersonajesService {
     personajeModel;
     constructor(personajeModel) {
         this.personajeModel = personajeModel;
     }
     async findAll() {
-        return this.personajeModel.findAll();
+        return this.personajeModel.findAll({ include: [serie_model_1.Serie] });
     }
 };
 exports.PersonajesService = PersonajesService;

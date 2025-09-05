@@ -12,7 +12,7 @@
     <tr *ngFor="let p of personajes">
       <td>{{ p.nombre }}</td>
       <td>{{ p.rol }}</td>
-      <td>{{ p.serieId }}</td>
+      <td>{{ p.serie?.nombre }}</td>
     </tr>
   </tbody>
 </table>
