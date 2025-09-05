@@ -22,3 +22,10 @@ Project to learn about NestJs as backend, angular as frontend with a DB on MySQL
 > create a db folder with a SQL file
 >> ``` mkdir db || cd db || touch init.sql ```
 
+# backend folders
+> crear carpeta de cada sección
+>> definir 4 archivos para cada sección
+>>> seccion.model.ts
+>>> seccion.controller.ts
+>>> seccion.module.ts
+>>> seccion.service.ts

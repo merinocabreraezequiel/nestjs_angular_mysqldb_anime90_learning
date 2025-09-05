@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS personajes (
 );
 
 -- Insertar datos de series
-INSERT INTO series (nombre, año) VALUES
+INSERT INTO series (nombre, anio) VALUES
 ('Dragon Ball Z', 1989),
 ('Sailor Moon', 1992),
 ('Neon Genesis Evangelion', 1995),
