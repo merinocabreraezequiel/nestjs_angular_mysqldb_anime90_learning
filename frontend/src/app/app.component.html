@@ -1,6 +1,11 @@
+<h1>{{ title }}</h1>
+
 <nav>
-  <a routerLink="/series">Series</a> |
-  <a routerLink="/personajes">Personajes</a>
+  <a routerLink="/series" routerLinkActive="active">Series</a> |
+  <a routerLink="/personajes" routerLinkActive="active">Personajes</a>
 </nav>
 
+<hr />
+
+<!-- Aquí se cargarán las vistas -->
 <router-outlet></router-outlet>

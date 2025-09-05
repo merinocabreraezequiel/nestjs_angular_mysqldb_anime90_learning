@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { AnimeService } from '../anime.service';
 
 @Component({
   selector: 'app-personajes',
@@ -11,9 +11,17 @@ import { AnimeService } from '../anime.service';
 export class PersonajesComponent implements OnInit {
   personajes: any[] = [];
 
-  constructor(private animeService: AnimeService) {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.animeService.getPersonajes().subscribe(data => this.personajes = data);
+  ngOnInit() {
+    console.log('Cargando personajes...');
+    this.http.get<any[]>('http://localhost:3000/personajes')
+      .subscribe({
+        next: data => {
+          this.personajes = data;
+          console.log('✅ Personajes recibidos:', this.personajes);
+        },
+        error: err => console.error('❌ Error al cargar personajes:', err)
+      });
   }
 }

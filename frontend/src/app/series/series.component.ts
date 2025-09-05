@@ -14,10 +14,14 @@ export class SeriesComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    console.log('Cargando series...');
     this.http.get<any[]>('http://localhost:3000/series')
-      .subscribe(data => {
-        this.series = data;
-        console.log('Series:', this.series);
+      .subscribe({
+        next: data => {
+          this.series = data;
+          console.log('✅ Series recibidas:', this.series);
+        },
+        error: err => console.error('❌ Error al cargar series:', err)
       });
   }
 }
