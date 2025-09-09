@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './mangacas.component.html',
+  styleUrls: ['./mangacas.component.css'],
 })
 export class MangacasComponent implements OnInit {
   mangacas: any[] = [];

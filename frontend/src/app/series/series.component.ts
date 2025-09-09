@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './series.component.html',
+  styleUrls: ['./series.component.css'],
 })
 export class SeriesComponent implements OnInit {
   series: any[] = [];

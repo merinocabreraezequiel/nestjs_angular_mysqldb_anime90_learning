@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './personajes.component.html',
+  styleUrls: ['./personajes.component.css'],
 })
 export class PersonajesComponent implements OnInit {
   personajes: any[] = [];
