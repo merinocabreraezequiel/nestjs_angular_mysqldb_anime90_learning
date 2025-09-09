@@ -17,4 +17,8 @@ export class AnimeService {
   getPersonajes(): Observable<any> {
     return this.http.get(`${this.baseUrl}/personajes`);
   }
+
+  getMangacas(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/mangacas`);
+  }
 }

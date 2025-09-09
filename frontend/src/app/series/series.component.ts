@@ -18,7 +18,7 @@ ngOnInit() {
   this.http.get<any>('http://localhost:3000/series')
     .subscribe({
       next: data => {
-        console.log('✅ Respuesta cruda del backend:', data);
+        console.log('✅ Respuesta del backend:', data);
 
         // Si el backend responde { data: [...] }
         if (Array.isArray(data)) {

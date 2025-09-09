@@ -2,8 +2,10 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { SeriesModule } from './series/series.module';
 import { PersonajesModule } from './personajes/personajes.module';
+import { MangacasModule } from './mangacas/mangacas.module';
 import { Serie } from './series/serie.model';
 import { Personaje } from './personajes/personaje.model';
+import { Mangaca } from './mangacas/mangaca.model';
 
 @Module({
   imports: [
@@ -14,12 +16,13 @@ import { Personaje } from './personajes/personaje.model';
       username: process.env.DB_USER || 'nestangular',
       password: process.env.DB_PASS || 'NA123456',
       database: process.env.DB_NAME || 'anime90s',
-      models: [Serie, Personaje],
+      models: [Serie, Personaje, Mangaca],
       autoLoadModels: true,
       synchronize: false, // cuidado: true recrea tablas, mejor false si usas init.sql
     }),
     SeriesModule,
     PersonajesModule,
+    MangacasModule,
   ],
 })
 export class AppModule {}

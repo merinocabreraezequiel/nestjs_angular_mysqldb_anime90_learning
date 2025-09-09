@@ -18,7 +18,7 @@ CREATE DATABASE IF NOT EXISTS `anime90s` /*!40100 DEFAULT CHARACTER SET utf8mb4 
 USE `anime90s`;
 
 -- Volcando estructura para tabla anime90s.mangaca
-CREATE TABLE IF NOT EXISTS `mangaca` (
+CREATE TABLE IF NOT EXISTS `mangacas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_series` int(11) DEFAULT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `mangaca` (
 
 -- Volcando datos para la tabla anime90s.mangaca: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `mangaca` DISABLE KEYS */;
-INSERT INTO `mangaca` (`id`, `nombre`, `id_series`, `createdAt`, `updatedAt`) VALUES
+INSERT INTO `mangacas` (`id`, `nombre`, `id_series`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Akira Toriyama', 1, '2025-09-05 13:52:03', '2025-09-05 13:52:35'),
 	(2, 'Naoko Takeuchi', 2, '2025-09-05 13:53:16', '2025-09-05 13:53:16'),
 	(3, 'Yoshiyuki Sadamoto', 3, '2025-09-05 13:53:44', '2025-09-05 13:53:44');

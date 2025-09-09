@@ -11,8 +11,10 @@ const common_1 = require("@nestjs/common");
 const sequelize_1 = require("@nestjs/sequelize");
 const series_module_1 = require("./series/series.module");
 const personajes_module_1 = require("./personajes/personajes.module");
+const mangacas_module_1 = require("./mangacas/mangacas.module");
 const serie_model_1 = require("./series/serie.model");
 const personaje_model_1 = require("./personajes/personaje.model");
+const mangaca_model_1 = require("./mangacas/mangaca.model");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -26,12 +28,13 @@ exports.AppModule = AppModule = __decorate([
                 username: process.env.DB_USER || 'nestangular',
                 password: process.env.DB_PASS || 'NA123456',
                 database: process.env.DB_NAME || 'anime90s',
-                models: [serie_model_1.Serie, personaje_model_1.Personaje],
+                models: [serie_model_1.Serie, personaje_model_1.Personaje, mangaca_model_1.Mangaca],
                 autoLoadModels: true,
                 synchronize: false,
             }),
             series_module_1.SeriesModule,
             personajes_module_1.PersonajesModule,
+            mangacas_module_1.MangacasModule,
         ],
     })
 ], AppModule);

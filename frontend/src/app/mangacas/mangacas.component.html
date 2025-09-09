@@ -1,0 +1,16 @@
+<h2>Listado de Mangacas</h2>
+
+<table border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Serie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of mangacas">
+      <td>{{ p.nombre }}</td>
+      <td>{{ p.serie?.nombre }}</td>
+    </tr>
+  </tbody>
+</table>

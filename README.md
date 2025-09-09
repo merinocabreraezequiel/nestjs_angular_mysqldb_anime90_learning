@@ -6,16 +6,16 @@ Project to learn about NestJs as backend, angular as frontend with a DB on MySQL
 > install nest client
 >> ``` npm install -g @nestjs/cli @angular/cli ```
 
-> create Backend structure
+> create **Backend** structure
 >> ``` nest new backend ```
 >> Choose the package admin [npm, yarn, pnpm]
->> join the backend folder and install dependencies
+>> join the **backend** folder and install dependencies
 >> ``` npm install @nestjs/sequelize sequelize sequelize-typescript mysql2 ```
 >> eliminar autocreación de git
 >> ``` rm -rf .git || rm .gitignore ```
 >> go to project root
 
-> create a Frontend structure
+> create a **Frontend** structure
 >> ``` ng new frontend --routing --style=css ```
 >> pulse Enter in every question
 
@@ -29,3 +29,12 @@ Project to learn about NestJs as backend, angular as frontend with a DB on MySQL
 >>> seccion.controller.ts
 >>> seccion.module.ts
 >>> seccion.service.ts
+
+#run project
+> backend
+>> join **backend** folder
+>> ```npm run start:dev```
+
+> frontend
+>> join **frontend** folder
+>> ```ng serve --host 0.0.0.0```
